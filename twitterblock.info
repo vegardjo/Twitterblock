@@ -1,0 +1,4 @@
+name = Twitterblock
+description = "Creates a block with a Twitter-feed"
+dependencies[] = twitter_pull
+core = 7.x

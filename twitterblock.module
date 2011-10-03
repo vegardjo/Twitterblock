@@ -1,0 +1,20 @@
+<?php
+
+/* hook_block_info */ 
+function twitterblock_block_info() {
+  $blocks['clock'] = array(
+    'info' => t('Twitterblock'), 
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/* hook_block_view */
+function twitterblock_block_view($delta = '') {
+  $block = array();
+    
+  $block['subject'] = t('Twitter feed');
+  $block['content'] = twitter_pull_render('@vegardjo', '', 3); 
+  
+  return $block;
+}
